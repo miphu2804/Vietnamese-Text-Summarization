@@ -1,3 +1,4 @@
+
 # Python-generated files
 __pycache__/
 *.py[oc]
@@ -7,4 +8,33 @@ wheels/
 *.egg-info
 
 # Virtual environments
-.venv
+.venv/
+env/
+venv/
+backend/.venv/
+backend/.env
+
+# Node and frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+*.log
+*.local
+*.DS_Store
+
+# IDE and OS
+.idea/
+.vscode/
+.history/
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.pytest_cache/
+.mypy_cache/
+.coverage
+coverage.xml
+*.swp
+*.swo
+*.bak
+*.tmp
