@@ -101,16 +101,12 @@ TMG301_Project/
 ```bash
 # Install UV using pip
 pip install uv
-
-# Or install using the official installer
-curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
 #### 2. Clone and Setup Backend
 
 ```bash
 # Clone the repository
-git clone <repository-url>
 cd TMG301_Project
 
 # Navigate to backend directory
@@ -378,35 +374,5 @@ Once the server is running, visit:
 - **Swagger UI**: http://localhost:8000/docs
 - **ReDoc**: http://localhost:8000/redoc
 - **OpenAPI Spec**: http://localhost:8000/openapi.json
-
-## Configuration
-
-### Backend Configuration
-
-The application can be configured through `src/app_config.py`:
-
-```python
-# STT Configuration
-STT_MODEL_NAME = "khanhld/chunkformer-ctc-large-vie"
-
-# Summarizer Configuration
-SUMMARIZER_MODEL_NAME = "VietAI/vit5-base-vi-news-vietnews-summarization"
-
-# Audio Processing
-AUDIO_SAMPLE_RATE = 16000
-AUDIO_CHANNELS = 1
-```
-
-### Frontend Configuration
-
-Frontend configuration in `frontend/src/services/api.ts`:
-
-```typescript
-export const API_BASE_URL = process.env.NODE_ENV === 'production'
-  ? 'https://your-api-domain.com'
-  : 'http://localhost:8000';
-```
-
-
 
 
