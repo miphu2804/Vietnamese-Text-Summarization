@@ -44,7 +44,7 @@ class UnifiedService:
 
         for i, transcription in enumerate(transcriptions):
             try:
-                summary = self.summarizer.speak(transcription)
+                summary = self.summarizer.summarize(transcription)
 
                 results.append({
                     "transcription": transcription,
@@ -73,26 +73,3 @@ class UnifiedService:
         return self.summarizer.summarize(text)
 
 
-if __name__ == "__main__":
-    unified_service = UnifiedService()
-
-    # Test with a news video file (change to your actual file path)
-    video_file = "/home/miphu/Downloads/[VTV1 Bản tin Thời sự 16h ngày 19⧸11⧸2021] Phát triển ngân hàng số trong tiến trình.mp4"  # or .mp3, .m4a, etc.
-
-    try:
-        print(f"Processing news file: {video_file}")
-        result = unified_service.transcribe_and_summarize(video_file)
-
-        print("\n=== TRANSCRIPTION ===")
-        print(result['transcription'])
-
-        print("\n=== SUMMARY ===")
-        print(result['summary'])
-
-        print(f"\nOriginal file: {result['original_audio_path']}")
-
-    except FileNotFoundError:
-        print(f"File not found: {video_file}")
-        print("Please update the path to your news video/audio file")
-    except Exception as e:
-        print(f"Error processing file: {e}")
